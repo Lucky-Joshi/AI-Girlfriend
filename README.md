@@ -1,12 +1,12 @@
 # Tara - AI Anime Companion
 
-An immersive, emotionally intelligent AI anime companion experience built with Next.js 15.
+An immersive, emotionally intelligent AI anime companion experience built with Next.js 16.
 
 ## Features
 
 - **Cinematic UI** - Cyberpunk anime aesthetic with neon glows, rain effects, and floating particles
 - **Emotional Intelligence** - Tara tracks and responds to emotions dynamically
-- **Streaming Chat** - Real-time streaming responses from NVIDIA AI
+- **Streaming Chat** - Real-time streaming responses from Gemini
 - **Voice Interaction** - Browser-based speech recognition and synthesis
 - **Relationship Progression** - Tara grows closer to you over time
 - **Animated Avatar** - Breathing, blinking, and talking pulse animations
@@ -14,7 +14,7 @@ An immersive, emotionally intelligent AI anime companion experience built with N
 
 ## Tech Stack
 
-- Next.js 15 (App Router)
+- Next.js 16 (App Router)
 - TypeScript
 - TailwindCSS
 - Framer Motion
@@ -36,7 +36,8 @@ cp .env.local.example .env.local
 
 3. Add your API keys to `.env.local`:
 - `GEMINI_API_KEY` - Get from https://aistudio.google.com/apikey
-- `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Optional, for memory features
+- `GEMINI_MODEL` - Optional, defaults to `gemini-2.5-flash`
+- `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` - Optional, for memory features
 
 4. Run the development server:
 ```bash
@@ -62,7 +63,7 @@ src/
 │   └── voice/              # Voice controls
 ├── hooks/                  # Custom React hooks
 ├── lib/
-│   ├── ai/                 # NVIDIA API client
+│   ├── ai/                 # Gemini API client
 │   ├── emotion/            # Emotion analysis engine
 │   ├── memory/             # Supabase memory utilities
 │   └── voice/              # Speech recognition/synthesis

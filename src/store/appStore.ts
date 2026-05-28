@@ -8,6 +8,8 @@ interface AppState {
   headTilt: number;
   talkingPulse: number;
   showGreeting: boolean;
+  ollamaConnected: boolean;
+  ollamaChecking: boolean;
   setLoaded: (loaded: boolean) => void;
   setStreaming: (streaming: boolean) => void;
   setBreathingPhase: (phase: number) => void;
@@ -15,6 +17,8 @@ interface AppState {
   setHeadTilt: (tilt: number) => void;
   setTalkingPulse: (pulse: number) => void;
   setShowGreeting: (show: boolean) => void;
+  setOllamaConnected: (connected: boolean) => void;
+  setOllamaChecking: (checking: boolean) => void;
 }
 
 export const useAppStore = create<AppState>((set) => ({
@@ -25,6 +29,8 @@ export const useAppStore = create<AppState>((set) => ({
   headTilt: 0,
   talkingPulse: 0,
   showGreeting: true,
+  ollamaConnected: false,
+  ollamaChecking: true,
 
   setLoaded: (isLoaded: boolean) => set({ isLoaded }),
   setStreaming: (isStreaming: boolean) => set({ isStreaming }),
@@ -33,4 +39,6 @@ export const useAppStore = create<AppState>((set) => ({
   setHeadTilt: (headTilt: number) => set({ headTilt }),
   setTalkingPulse: (talkingPulse: number) => set({ talkingPulse }),
   setShowGreeting: (showGreeting: boolean) => set({ showGreeting }),
+  setOllamaConnected: (ollamaConnected: boolean) => set({ ollamaConnected }),
+  setOllamaChecking: (ollamaChecking: boolean) => set({ ollamaChecking }),
 }));
